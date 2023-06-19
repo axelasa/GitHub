@@ -25,11 +25,11 @@ class GitApi {
   String? type;
   bool? site_admin;
   String? name;
-  dynamic? company;
+  dynamic company;
   String? blog;
   String? location;
-  dynamic? email;
-  dynamic? hireable;
+  dynamic email;
+  dynamic hireable;
   String? bio;
   String? twitter_username;
   int? public_repos;
@@ -190,7 +190,7 @@ class Repo {
   int? size;
   int? stargazersCount;
   int? watchersCount;
-  dynamic? language;
+  dynamic language;
   bool? hasIssues;
   bool? hasProjects;
   bool? hasDownloads;
@@ -198,7 +198,7 @@ class Repo {
   bool? hasPages;
   bool? hasDiscussions;
   int? forksCount;
-  dynamic? mirror_url;
+  dynamic mirror_url;
   bool? archived;
   bool? disabled;
   int? openIssuesCount;

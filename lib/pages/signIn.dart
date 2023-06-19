@@ -53,9 +53,6 @@ class _SignInState extends State<SignIn> {
                     if(state is GetProfileSuccess){
                       var response = state.data;
                       debugPrint('HERE IS THE AVATAR${response?.avatar_url}');
-                      Future.delayed(const Duration(milliseconds: 100),(){
-                        BlocProvider.of<GetFollowersBloc>(context).add(GetFollowersInfo('${response?.login}'));
-                      });
                     }
                     return const SizedBox.shrink();
                 },
@@ -99,8 +96,7 @@ class _SignInState extends State<SignIn> {
                   onPressed: () async{
                     // initState();
                     Future.delayed(const Duration(milliseconds: 1000),(){
-                      BlocProvider.of<GetProfileBloc>(context).add(GetProfileInfo(usernameController.text));
-                      Navigator.of(context).pushNamed('/landing');
+                      Navigator.of(context).pushNamed('/home');
                     });
 
                     await UserSimplePreferences.setUsername(usernameController.text);

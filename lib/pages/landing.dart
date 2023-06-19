@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:github_flutter/bloc/get_followers_bloc.dart';
 import 'package:github_flutter/model/git_api.dart';
-import 'package:image_network/image_network.dart';
 import '../bloc/get_profile_bloc.dart';
 import '../common/user_simple_preferences.dart';
 
@@ -17,13 +16,13 @@ class Landing extends StatefulWidget {
 }
 
 class _LandingState extends State<Landing> {
-  String name = "";
-  @override
-  void initState() {
-    super.initState();
-    name = UserSimplePreferences.getUsername()!;
-    BlocProvider.of<GetFollowersBloc>(context).add(GetFollowersInfo(name));
-  }
+  //String name = "";
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   name = UserSimplePreferences.getUsername()!;
+  //   BlocProvider.of<GetFollowersBloc>(context).add(GetFollowersInfo(name));
+  // }
   @override
   Widget build(BuildContext context) {
     return  CupertinoPageScaffold(
@@ -39,7 +38,6 @@ class _LandingState extends State<Landing> {
                   if(state is GetProfileSuccess){
                    // var response = state.data;
                     debugPrint("Data Has Been Retrieved");
-                    //BlocProvider.of<GetFollowersBloc>(context).add(GetFollowersInfo('${response?.login}'));
                   }
                 },
                 builder: (context,state){

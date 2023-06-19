@@ -2,10 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../bloc/get_followers_bloc.dart';
 import '../bloc/get_profile_bloc.dart';
-import '../common/user_simple_preferences.dart';
 class Account extends StatefulWidget {
   const Account({super.key});
 
@@ -14,12 +11,12 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
-  String name = "";
-  @override
-  void initState() {
-    super.initState();
-    name = UserSimplePreferences.getUsername() ?? '';
-  }
+  // String name = "";
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   name = UserSimplePreferences.getUsername() ?? '';
+  // }
   @override
   Widget build(BuildContext context) {
     return  CupertinoPageScaffold(
@@ -112,13 +109,46 @@ class _AccountState extends State<Account> {
                               style: const TextStyle(
                                   decoration: TextDecoration.none,
                                   fontWeight: FontWeight.normal,
-                                  fontSize: 20,
+                                  fontSize: 15,
                                   color: CupertinoColors.black
                               ),
                               maxLines: 5,
                             ),
                           ),
+                          const SizedBox(height:10),
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Twitter:${response?.twitter_username ?? ""}',
+                                  textAlign: TextAlign.start,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 15,
+                                      color: CupertinoColors.black
+                                  ),
+                                ),
+                                const SizedBox(width:10),
+                                AutoSizeText('Blog: ${response?.blog ?? ""}',
+                                  textAlign: TextAlign.start,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 15,
+                                      color: CupertinoColors.black
+                                  ),
+                                  maxLines: 5,
+                                )
+                              ],
+                            ),
+                          ),
                           const Divider(height: 40,),
+                          const SizedBox(height:10),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,

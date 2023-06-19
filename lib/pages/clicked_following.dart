@@ -21,7 +21,6 @@ class _ClickedFollowingState extends State<ClickedFollowing> {
     super.initState();
     name = UserSimplePreferences.getUsername() ?? '';
   }
-
   @override
   Widget build(BuildContext context) {
     return  CupertinoPageScaffold(

@@ -27,9 +27,7 @@ class _FollowingState extends State<Following> {
                 BlocConsumer<GetProfileBloc,GetProfileState>(
                   listener: (context,state){
                     if(state is GetProfileSuccess){
-                      // var response = state.data;
                       debugPrint("Data Has Been Retrieved");
-                      //BlocProvider.of<GetFollowersBloc>(context).add(GetFollowersInfo('${response?.login}'));
                     }
                   },
                   builder: (context,state){
