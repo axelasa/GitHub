@@ -142,7 +142,24 @@ class _ClickedUserState extends State<ClickedUser> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('name: ${response?.name}',
+
+                              Visibility(
+                                visible: false,
+                                child: Text('name: ${response?.name}',
+                                  textAlign: TextAlign.start,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 40,
+                                      color: CupertinoColors.black
+                                  ),
+                                  maxLines: 5,
+                                ),
+                              ),
+                              const SizedBox(height: 10,),
+                              CupertinoListTile(
+                                  title: AutoSizeText('public repos: ${response?.public_repos}',
                                 textAlign: TextAlign.start,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
@@ -153,50 +170,51 @@ class _ClickedUserState extends State<ClickedUser> {
                                 ),
                                 maxLines: 5,
                               ),
-                              const SizedBox(height: 10,),
-                              AutoSizeText('public repos: ${response?.public_repos}',
-                                textAlign: TextAlign.start,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                    decoration: TextDecoration.none,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 40,
-                                    color: CupertinoColors.black
-                                ),
-                                maxLines: 5,
+                                  leading: const Icon(
+                                    Icons.public_outlined,
+                                  )
                               ),
                               const SizedBox(height: 10,),
-                              Text('public gist: ${response?.public_gists}',
-                                textAlign: TextAlign.start,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                    decoration: TextDecoration.none,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 40,
-                                    color: CupertinoColors.black
+                              CupertinoListTile(
+                                title: Text('public gist: ${response?.public_gists}',
+                                  textAlign: TextAlign.start,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 40,
+                                      color: CupertinoColors.black
+                                  ),
                                 ),
+                                leading: Icon(CupertinoIcons.chart_bar_circle),
                               ),
                               const SizedBox(height: 10,),
-                              Text('followers: ${response?.followers}',
-                                textAlign: TextAlign.start,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                    decoration: TextDecoration.none,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 40,
-                                    color: CupertinoColors.black
+                              CupertinoListTile(
+                                title: Text('followers: ${response?.followers}',
+                                  textAlign: TextAlign.start,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 40,
+                                      color: CupertinoColors.black
+                                  ),
                                 ),
+                                leading: Icon(Icons.follow_the_signs_outlined),
                               ),
                               const SizedBox(height: 10,),
-                              Text('following: ${response?.following}',
-                                textAlign: TextAlign.start,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                    decoration: TextDecoration.none,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 40,
-                                    color: CupertinoColors.black
+                              CupertinoListTile(
+                                title: Text('following: ${response?.following}',
+                                  textAlign: TextAlign.start,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 40,
+                                      color: CupertinoColors.black
+                                  ),
                                 ),
+                                leading: Icon(Icons.accessibility_new_outlined),
                               ),
                             ],
                           )

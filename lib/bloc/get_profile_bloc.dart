@@ -13,6 +13,8 @@ part 'get_profile_state.dart';
 @Injectable()
 class GetProfileBloc extends Bloc<GetProfileEvent, GetProfileState> {
 
+  //cache data here
+
   GetProfileBloc() : super(GetProfileInitial()) {
     on<GetProfileInfo>(_onGetProfileEvent);
   }

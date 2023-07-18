@@ -11,12 +11,7 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
-  // String name = "";
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   name = UserSimplePreferences.getUsername() ?? '';
-  // }
+
   @override
   Widget build(BuildContext context) {
     return  CupertinoPageScaffold(
@@ -153,62 +148,102 @@ class _AccountState extends State<Account> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('name: ${response?.name}',
-                                textAlign: TextAlign.start,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                    decoration: TextDecoration.none,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 40,
-                                    color: CupertinoColors.black
-                                ),
-                                maxLines: 5,
+                              Row(
+                                children: [
+                                  const Icon(
+                                   CupertinoIcons.person
+                                  ),
+                                  const SizedBox(width: 3,),
+                                  Text('name: ${response?.name}',
+                                    textAlign: TextAlign.start,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                        decoration: TextDecoration.none,
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 40,
+                                        color: CupertinoColors.black
+                                    ),
+                                    maxLines: 5,
+                                  ),
+                                ],
                               ),
                               const SizedBox(height: 10,),
-                              AutoSizeText('public repos: ${response?.public_repos}',
-                                textAlign: TextAlign.start,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                    decoration: TextDecoration.none,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 40,
-                                    color: CupertinoColors.black
-                                ),
-                                maxLines: 5,
+                              Row(
+                                children: [
+                                  const Icon(
+                                    CupertinoIcons.chart_bar_circle
+                                  ),
+                                  const SizedBox(width: 3,),
+                                  AutoSizeText('public repos: ${response?.public_repos}',
+                                    textAlign: TextAlign.start,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                        decoration: TextDecoration.none,
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 40,
+                                        color: CupertinoColors.black
+                                    ),
+                                    maxLines: 5,
+                                  ),
+                                ],
                               ),
                               const SizedBox(height: 10,),
-                              Text('public gist: ${response?.public_gists}',
-                                textAlign: TextAlign.start,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                    decoration: TextDecoration.none,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 40,
-                                    color: CupertinoColors.black
-                                ),
+                              Row(
+                                children: [
+                                  const Icon(
+                                    Icons.public_outlined
+                                  ),
+                                  const SizedBox(width: 3,),
+                                  Text('public gist: ${response?.public_gists}',
+                                    textAlign: TextAlign.start,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                        decoration: TextDecoration.none,
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 40,
+                                        color: CupertinoColors.black
+                                    ),
+                                  ),
+                                ],
                               ),
                               const SizedBox(height: 10,),
-                              Text('followers: ${response?.followers}',
-                                textAlign: TextAlign.start,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                    decoration: TextDecoration.none,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 40,
-                                    color: CupertinoColors.black
-                                ),
+                              Row(
+                                children: [
+                                  const Icon(
+                                    Icons.follow_the_signs_outlined
+                                  ),
+                                  const SizedBox(width: 3,),
+                                  Text('followers: ${response?.followers}',
+                                    textAlign: TextAlign.start,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                        decoration: TextDecoration.none,
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 40,
+                                        color: CupertinoColors.black
+                                    ),
+                                  ),
+                                ],
                               ),
                               const SizedBox(height: 10,),
-                              Text('following: ${response?.following}',
-                                textAlign: TextAlign.start,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                    decoration: TextDecoration.none,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 40,
-                                    color: CupertinoColors.black
-                                ),
-                              ),
+                              Row(
+                                children: [
+                                  const Icon(
+                                    Icons.accessibility_new_outlined
+                                  ),
+                                  const SizedBox(width:3 ,),
+                                  Text('following: ${response?.following}',
+                                    textAlign: TextAlign.start,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                        decoration: TextDecoration.none,
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 40,
+                                        color: CupertinoColors.black
+                                    ),
+                                  ),
+                                ],
+                              )
                             ],
                           )
                         ],

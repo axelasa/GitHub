@@ -110,16 +110,20 @@ class _LandingState extends State<Landing> {
                           const SizedBox(height: 10,),
                           Align(
                             alignment: Alignment.bottomLeft,
-                            child: AutoSizeText('Bio: ${response?.bio ?? ''}',
-                              textAlign: TextAlign.start,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 20,
-                                  color: CupertinoColors.black
+                            child: Container(
+                              constraints: const BoxConstraints(maxHeight: 60),
+                              child: SingleChildScrollView(
+                                child: AutoSizeText('Bio: ${response?.bio ?? ''}',
+                                  textAlign: TextAlign.start,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                      decoration: TextDecoration.none,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 20,
+                                      color: CupertinoColors.black
+                                  ),
+                                ),
                               ),
-                              maxLines: 2,
                             ),
                           )
                         ],

@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     Widget currentWidgetPage = const Landing();
-    switch(_selectedIndex){
+    switch(_selectedIndex) {
       case 0:
         currentWidgetPage = const Landing();
         BlocProvider.of<GetFollowersBloc>(context).add(GetFollowersInfo(name));
@@ -70,7 +70,8 @@ class _HomeScreenState extends State<HomeScreen> {
             tabBackgroundColor: Colors.white12,
             padding: const EdgeInsets.all(16),
             tabs: const [
-              GButton(icon: CupertinoIcons.arrow_2_squarepath,
+              GButton(
+                icon: CupertinoIcons.arrow_2_squarepath,
                 text: 'Followers',
               ),
               GButton(text: 'Following',
